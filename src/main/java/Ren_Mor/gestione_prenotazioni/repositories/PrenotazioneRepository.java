@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Long> {
-    boolean existByUtenteAndDataPrenotazione(Utente utente, LocalDate dataPrenotazione);
-    boolean existByPostazioneAndDataPrenotazione(Postazione postazione, LocalDate dataPrenotazione);
+    boolean existsByUtenteAndDataPrenotazione(Utente utente, LocalDate dataPrenotazione);
+    boolean existsByPostazioneAndDataPrenotazione(Postazione postazione, LocalDate dataPrenotazione);
     List<Prenotazione> findByUtente(Utente utente);
 }

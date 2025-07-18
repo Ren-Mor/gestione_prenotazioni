@@ -6,11 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import Ren_Mor.gestione_prenotazioni.exceptions.ValidationException;
 
+import java.util.List;
+
 @Service
 public class UtenteService {
 
     @Autowired
     private UtenteRepository utenteRepository;
+
+    public static void saveAll(List<Utente> u1) {
+    }
 
     public void saveUtente(Utente newUtente){
         if (utenteRepository.existsByEmail(newUtente.getEmail())) throw new ValidationException("Email " + newUtente.getEmail() + " già in uso");

@@ -15,7 +15,7 @@ public class Postazione {
     private int occupantiMassimi;
 
     @ManyToOne Edificio edificio;
-    public Postazione(){}
+    public Postazione(String pos001, String s, TipoPostazione openspace, int i, Edificio edificio){}
 
     public Postazione(String descrizionePostazione, TipoPostazione tipoPostazione, int occupantiMassimi, Edificio edificio) {
         this.descrizionePostazione = descrizionePostazione;
@@ -61,4 +61,5 @@ public class Postazione {
     public void setEdificio(Edificio edificio) {
         this.edificio = edificio;
     }
+
 }
