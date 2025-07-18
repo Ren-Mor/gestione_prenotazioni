@@ -27,7 +27,7 @@ public class Edificio {
     }
 
     public String getIndirizzoEdificio() {
-        return IndirizzoEdificio;
+        return indirizzoEdificio;
     }
 
     public String getCittaEdificio() {
@@ -40,7 +40,7 @@ public class Edificio {
     }
 
     public void setIndirizzoEdificio(String indirizzoEdificio) {
-        IndirizzoEdificio = indirizzoEdificio;
+        indirizzoEdificio = indirizzoEdificio;
     }
 
     public void setCittaEdificio(String cittaEdificio) {
