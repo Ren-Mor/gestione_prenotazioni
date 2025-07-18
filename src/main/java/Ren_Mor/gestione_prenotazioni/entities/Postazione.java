@@ -17,6 +17,12 @@ public class Postazione {
     @ManyToOne Edificio edificio;
     public Postazione(){}
 
+    public Postazione(String descrizionePostazione, TipoPostazione tipoPostazione, int occupantiMassimi, Edificio edificio) {
+        this.descrizionePostazione = descrizionePostazione;
+        this.tipoPostazione = tipoPostazione;
+        this.occupantiMassimi = occupantiMassimi;
+        this.edificio = edificio;
+    }
 
     // Getter
     public Long getId() {
@@ -35,6 +41,10 @@ public class Postazione {
         return occupantiMassimi;
     }
 
+    public Edificio getEdificio() {
+        return edificio;
+    }
+
     // Setter
     public void setDescrizionePostazione(String descrizionePostazione) {
         this.descrizionePostazione = descrizionePostazione;
@@ -46,5 +56,9 @@ public class Postazione {
 
     public void setOccupantiMassimi(int occupantiMassimi) {
         this.occupantiMassimi = occupantiMassimi;
+    }
+
+    public void setEdificio(Edificio edificio) {
+        this.edificio = edificio;
     }
 }

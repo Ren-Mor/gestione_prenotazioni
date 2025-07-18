@@ -17,6 +17,12 @@ public class Edificio {
 
     public Edificio(){}
 
+    public Edificio(String nomeEdificio, String indirizzoEdificio, String cittaEdificio) {
+        this.nomeEdificio = nomeEdificio;
+        this.indirizzoEdificio = indirizzoEdificio;
+        this.cittaEdificio = cittaEdificio;
+    }
+
     // Getter
     public Long getId() {
         return id;
@@ -40,7 +46,7 @@ public class Edificio {
     }
 
     public void setIndirizzoEdificio(String indirizzoEdificio) {
-        indirizzoEdificio = indirizzoEdificio;
+        this.indirizzoEdificio = indirizzoEdificio;
     }
 
     public void setCittaEdificio(String cittaEdificio) {

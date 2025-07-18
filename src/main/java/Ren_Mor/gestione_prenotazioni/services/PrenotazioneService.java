@@ -17,21 +17,17 @@ public class PrenotazioneService {
     private PrenotazioneRepository prenotazioneRepository;
 
     @Autowired private UtenteRepository utenteRepository;
-    public Prenotazione prenotazione(Utente utente, Postazione postazione, LocalDate data) {
+    public Prenotazione prenotazione(Prenotazione prenotazione) {
         // Qui sto controllando se l'utente ha già una prenotazione per quella data
-        if (!prenotazioneRepository.findByUtenteAndDataPrenotazione(utente, data).isEmpty()) {
+        if (prenotazioneRepository.existByUtenteAndDataPrenotazione(prenotazione.getUtente(), prenotazione.getDataPrenotazione())) {
             throw new IllegalStateException("L'Utente ha già una prenotazione per questa data");
         }
 
         // Qui sto controllando se la postazione è già prenotata per quella data
-        if (!prenotazioneRepository.findByPostazioneAndDataPrenotazione(postazione, data).isEmpty()) {
+        if (prenotazioneRepository.existByPostazioneAndDataPrenotazione(prenotazione.getPostazione(), prenotazione.getDataPrenotazione())) {
             throw new IllegalStateException("La Postazione è già prenotata per questa data");
         }
 
-        Prenotazione prenotazione = new Prenotazione();
-        prenotazione.setUtente(utente);
-        prenotazione.setPostazione(postazione);
-        prenotazione.setDataPrenotazione(data);
         return prenotazioneRepository.save(prenotazione);
     }
 }
