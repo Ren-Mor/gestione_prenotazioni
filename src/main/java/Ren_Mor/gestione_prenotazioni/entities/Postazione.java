@@ -1,5 +1,6 @@
 package Ren_Mor.gestione_prenotazioni.entities;
 
+import Ren_Mor.gestione_prenotazioni.TipoPostazione;
 import jakarta.persistence.*;
 
 @Entity
@@ -10,7 +11,7 @@ public class Postazione {
     private Long id;
     private String descrizionePostazione;
     @Enumerated(EnumType.STRING)
-    private String tipoPostazione;
+    private TipoPostazione tipoPostazione;
     private int occupantiMassimi;
 
     @ManyToOne Edificio edificio;
@@ -26,7 +27,7 @@ public class Postazione {
         return descrizionePostazione;
     }
 
-    public String getTipoPostazione() {
+    public TipoPostazione getTipoPostazione() {
         return tipoPostazione;
     }
 
@@ -39,7 +40,7 @@ public class Postazione {
         this.descrizionePostazione = descrizionePostazione;
     }
 
-    public void setTipoPostazione(String tipoPostazione) {
+    public void setTipoPostazione(TipoPostazione tipoPostazione) {
         this.tipoPostazione = tipoPostazione;
     }
 
