@@ -12,7 +12,7 @@ public class Edificio {
     private Long id;
 
     private String nomeEdificio;
-    private String IndirizzoEdificio;
+    private String indirizzoEdificio;
     private String cittaEdificio;
 
     public Edificio(){}
